@@ -1,16 +1,17 @@
 # My first workflow
-name: Trigger Ubuntu20.04 CI
+name: Workflow test
+on:  
   push:
   workflow_dispatch:
 
 jobs:
   job1:
-    run-name: Ubuntu20.04 - ${{ github.event.pull_request.title }}
-    steps:
+    run-on: Ubuntu20.04
+    step:
       - name: step1 for testing
         run: |
           echo "hello from Asyraf"
-          sleep 30
+          sleep 10
       - name: step2
         run: |
           cat /etc/os-release
