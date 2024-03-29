@@ -3,17 +3,20 @@
 name: workflow1
 on:
   push:
-    branches:
-      - main
+
 
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
       - name: step1 for testing
-        run: echo "hello from Asyraf"
+        run: |
+          echo "hello from Asyraf"
+          sleep 30
       - name: step2
-        run: cat /etc/os-release
+        run: |
+          cat /etc/os-release
+          sleep 30
 ## Name is not important in a step
       - run: uname -a
 
