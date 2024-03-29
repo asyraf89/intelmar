@@ -17,6 +17,11 @@ jobs:
         run: |
           cat /etc/os-release
           sleep 30
+      - name: creating file
+        run: |
+         cat testingfileWF
+         echo "This is the File name test for WF" > testingfileWF.txt
+         sleep 30
 ## Name is not important in a step
       - run: uname -a
 
