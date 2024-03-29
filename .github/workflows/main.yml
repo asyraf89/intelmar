@@ -3,8 +3,8 @@
 name: workflow1
 on:
   push:
-    branches:
-      - main
+  workflow_dispatch:
+  
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -17,12 +17,6 @@ jobs:
         run: |
           cat /etc/os-release
           sleep 5
-      - name: creating file
-        run: |
-         mkdir testingfileWF
-         cat   /intelmar/
-         echo "This is the File name test for WF" > testingfileWF.txt
-         sleep 5
 ## Name is not important in a step
       - run: uname -a
 
