@@ -1,10 +1,11 @@
 # My first workflow
 
 name: workflow1
+run-name: Ubuntu20.04 - ${{ github.event.pull_request.title }}
 on:
   push:
   workflow_dispatch:
-  
+
 jobs:
   job1:
     runs-on: ubuntu-latest
