@@ -20,7 +20,7 @@ jobs:
       - name: creating file
         run: |
          mkdir testingfileWF
-         cat testingfileWF
+         cat   /intelmar/
          echo "This is the File name test for WF" > testingfileWF.txt
          sleep 5
 ## Name is not important in a step
