@@ -2,7 +2,9 @@
 
 name: workflow1
 on:
-  push
+  push:
+    branches:
+      - main
 
 jobs:
   job1:
@@ -10,7 +12,9 @@ jobs:
     steps:
       - name: step1 for testing
         run: echo "hello from Asyraf"
-      - name: step 2
-        run: echo "update release"
+      - name: step2
+        run: cat /etc/os-release
+## Name is not important in a step
+      - run: uname -a
 
   
