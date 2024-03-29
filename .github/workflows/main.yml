@@ -2,11 +2,7 @@
 
 name: workflow1
 on:
-  push:
-    branches:
-      - 'release/**'
-    paths:
-      - '**.js'
+  push
 
 jobs:
   job1:
