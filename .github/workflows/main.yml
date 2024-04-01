@@ -2,7 +2,8 @@
 
 name: workflow1
 on: 
-  push
+  workflow_dispatch:
+  push:
 
 jobs:
   job1:
@@ -17,7 +18,8 @@ jobs:
           cat /etc/os-release
           sleep 5
           hostname
-          touch /tmp/asyraf89/
+          touch /tmp/intelmar
+          sleep 5
 ## Name is not important in a step
       - run: uname -a
   
