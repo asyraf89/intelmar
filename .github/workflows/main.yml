@@ -4,6 +4,10 @@ name: workflow1
 on: 
   workflow_dispatch:
   push:
+env:
+  greetings: "Good Morning"
+  name: "Mark"
+  lastname: "Mario"
 
 jobs:
   job1:
@@ -20,7 +24,7 @@ jobs:
         run: |
           cat /etc/os-release
           hostname
-          echo "$greetings! from $.name"
+          echo "$greetings ! from $.name"
           touch /tmp/asyraf_release
 
           
@@ -35,7 +39,7 @@ jobs:
     steps: 
       - name: step1
         run: |
-          echo "$greetings! from $name $lastname . $name created this file"
+          echo "$greetings ! from $name $lastname . $name created this file"
         env:
             name: Asyraf
       - name: step2 for testing
