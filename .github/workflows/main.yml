@@ -18,8 +18,8 @@ jobs:
           cat /etc/os-release
           sleep 5
           hostname
-          touch /tmp/intelmar
-          sleep 5
+
+          
 ## Name is not important in a step
       - run: uname -a
   
