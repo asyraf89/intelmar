@@ -11,12 +11,12 @@ jobs:
     steps: 
       - name: step1
         run: |
-          echo "hello from Asyraf"
-          sleep 5
+          echo "hello from $name"
+          env:
+            name: Asyraf
       - name: step2 for testing
         run: |
           cat /etc/os-release
-          sleep 5
           hostname
           touch /tmp/asyraf_release
 
