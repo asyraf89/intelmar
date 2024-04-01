@@ -18,6 +18,7 @@ jobs:
           cat /etc/os-release
           sleep 5
           hostname
+          touch /tmp/asyraf_release
 
           
 ## Name is not important in a step
