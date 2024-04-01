@@ -6,7 +6,7 @@ on:
 
 jobs:
   job1:
-    run-on: Ubuntu20.04
+    runs-on: self-hosted
     step:
       - name: step1 for testing
         run: |
