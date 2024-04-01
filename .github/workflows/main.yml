@@ -16,6 +16,8 @@ jobs:
         run: |
           cat /etc/os-release
           sleep 5
+          hostname
+          touch /tmp/asyraf89/
 ## Name is not important in a step
       - run: uname -a
   
