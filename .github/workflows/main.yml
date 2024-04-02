@@ -38,6 +38,7 @@ jobs:
   test:
       runs-on: ubuntu-latest
       environment: test
+      needs: build
       env:
         lastname: "jinggo"
       steps: 
@@ -50,7 +51,7 @@ jobs:
           
   deploy:
     runs-on: ubuntu-latest
-    needs: build
+    needs: test
     environment: prod
     env:
       lastname: "ridzuan"
