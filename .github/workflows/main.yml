@@ -18,11 +18,13 @@ jobs:
       - name: step1
         run: |
           echo "$greetings ! from $name . $name created this file"
+          sleep 20
         env:
             name: Asyraf
       - name: step2 for testing
         run: |
           cat /etc/os-release
+          sleep 10
           hostname
           echo "$greetings ! from $name"
           touch /tmp/asyraf_release
@@ -40,11 +42,13 @@ jobs:
       - name: step1
         run: |
           echo "$greetings ! from $name $lastname . $name created this file"
+          sleep 10
         env:
             name: Asyraf
       - name: step2 for testing
         run: |
           cat /etc/os-release
+          sleep 10
           hostname
           echo "$greetings ! from $name"
           touch /tmp/asyraf_release
