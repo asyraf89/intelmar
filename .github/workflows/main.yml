@@ -10,7 +10,7 @@ env:
   lastname: "Mario"
 
 jobs:
-  build: ##build code##
+  build: 
     runs-on: ubuntu-latest
     environment: dev
     env:
