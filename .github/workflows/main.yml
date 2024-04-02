@@ -34,6 +34,9 @@ jobs:
           hostname
           echo "$greetings ! from $name"
           touch /tmp/asyraf_release
+
+      ## Name is not important in a step
+      - run: uname -a
    
   test:
       runs-on: ubuntu-latest
@@ -71,8 +74,7 @@ jobs:
           echo "$greetings ! from $name"
           touch /tmp/asyraf_release
 
-## Name is not important in a step
-      - run: uname -a
+
 
 
            
