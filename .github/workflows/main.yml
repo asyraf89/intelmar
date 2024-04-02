@@ -31,14 +31,12 @@ jobs:
           hostname
           echo "$greetings ! from $name"
           touch /tmp/asyraf_release
-
-
-##test code##          
+   
   test:
       runs-on: ubuntu-latest
       environment: test
       env:
-        lastname: "ridzuan"
+        lastname: "jinggo"
       steps: 
         - name: step1
           run: |
@@ -47,10 +45,6 @@ jobs:
             echo " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }}"
             sleep 5
           
-## Name is not important in a step
-      - run: uname -a
-
-##depoly code##
   deploy:
     runs-on: ubuntu-latest
     environment: prod
@@ -71,6 +65,9 @@ jobs:
           hostname
           echo "$greetings ! from $name"
           touch /tmp/asyraf_release
+
+## Name is not important in a step
+      - run: uname -a
 
 
            
