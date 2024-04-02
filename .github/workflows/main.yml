@@ -49,7 +49,7 @@ jobs:
           run: |
             echo "$greetings ! from $name $lastname . $name created this file"
             echo Application name is ${{ vars.APP_NAME }}
-            echo " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }}"
+            ech " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }}"
             sleep 5
 
   stage:
