@@ -18,7 +18,7 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     ##continue-on-error: true
-    if: github.event_name == 'push'
+    ##if: github.event_name == 'push'
     environment: dev
     env:
       greetings: "hello"
@@ -62,11 +62,11 @@ jobs:
         lastname: "jinggo"
       steps: 
         - name: step1
-          continue-on-error: true
+          ##continue-on-error: true
           run: |
             echo "$greetings ! from $name $lastname . $name created this file"
             echo Application name is ${{ vars.APP_NAME }}
-            ech " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }}"
+            echo " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }}"
             sleep 5
         - name: step2
           run: |
