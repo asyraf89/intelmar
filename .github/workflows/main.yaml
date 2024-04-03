@@ -23,7 +23,7 @@ jobs:
         ##continue-on-error: true
         run: |
           echo "$greetings ! from $name . $name created this ${{ vars.APP_NAME }} under repo ${{ GITHUB.REPOSITORY }} and its running on OS ${{ RUNNER.OS }}"
-          ech Application name is ${{ vars.APP_NAME }} and password for the same is ${{  secrets.SERVER_PASSWORD }}
+          echo Application name is ${{ vars.APP_NAME }} and password for the same is ${{  secrets.SERVER_PASSWORD }}
           echo " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }}"
           sleep 5
         env:
@@ -58,7 +58,7 @@ jobs:
             sleep 5
         - name: step2
           run: |
-            echo "$greetings ! from $name $lastname . $name created this file"
+            ech "$greetings ! from $name $lastname . $name created this file"
 
   stage:
     runs-on: ubuntu-latest
