@@ -72,7 +72,7 @@ jobs:
         - name: step2
           id: step2
           run: |
-            eco "$greetings ! from $name $lastname . $name created this file"
+            echo "$greetings ! from $name $lastname . $name created this file"
         - name: debug step
           if: ${{ failure() && steps.step2.conclusion == 'failure' }}
           run: |
