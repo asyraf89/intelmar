@@ -9,9 +9,11 @@ env:
   name: "Mark"
   lastname: "Mario1"
 
+
+
 jobs:
   
-  
+  ##build##
   build: 
     runs-on: ubuntu-latest
     ##continue-on-error: true
@@ -41,6 +43,8 @@ jobs:
       ## Name is not important in a step
       - run: uname -a
    
+  
+  ##test##
   test:
       runs-on: ubuntu-latest
       ##continue-on-error: true
@@ -60,9 +64,11 @@ jobs:
           run: |
             ech "$greetings ! from $name $lastname . $name created this file"
 
+##stage##
   stage:
     runs-on: ubuntu-latest
     needs: test
+    if: ${{ always() }}
     environment: prod
     env:
       lastname: "ridzuan"
@@ -75,11 +81,11 @@ jobs:
         env:
             name: Asyraf
   
-  
+  ##notify##
   notify:
    runs-on: ubuntu-latest
    needs : deploy
-   if: ${{ always() }}
+   ##if: ${{ always() }}
    environment: deploy
    steps:
      - name: Notification email
