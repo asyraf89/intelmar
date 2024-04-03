@@ -18,9 +18,10 @@ jobs:
       greetings: "hello"
     steps: 
       - name: step1
+        continue-on-error: true
         run: |
           echo "$greetings ! from $name . $name created this ${{ vars.APP_NAME }} under repo ${{ GITHUB.REPOSITORY }} and its running on OS ${{ RUNNER.OS }}"
-          echo Application name is ${{ vars.APP_NAME }} and password for the same is ${{  secrets.SERVER_PASSWORD }}
+          ech Application name is ${{ vars.APP_NAME }} and password for the same is ${{  secrets.SERVER_PASSWORD }}
           echo " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }}"
           sleep 5
         env:
@@ -28,6 +29,7 @@ jobs:
       - name: step2 for testing
         run: |
           cat /etc/os-release
+          ech "$greetings ! from $name . $name created this ${{ vars.APP_NAME }} under repo ${{ GITHUB.REPOSITORY }} and its running on OS ${{ RUNNER.OS }}"
           sleep 5
       - name: step3 for error testing
         run: |  
