@@ -35,14 +35,13 @@ jobs:
         ##if: github.event_name == 'push'
         if: runner.os == 'Linux'  
         run: |
-          echo "The operating system on the runner is $ {{env:RUNNER.OS}} ."
-          echo runner.os
+          echo "The operating system on the runner is $ {{runner.os}} ."
           cat /etc/os-release
           sleep 5
       - name: step3 for error testing
         if: runner.os != 'Linux'  
         run: | 
-          echo "The operating system on the runner is $ {{env:RUNNER.OS}} ."
+          echo "The operating system on the runner is $ {{runner.os}} ."
           hostname
           echo "$greetings ! from $name"
           touch /tmp/asyraf_release
