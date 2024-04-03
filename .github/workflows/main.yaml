@@ -7,7 +7,7 @@ on:
 env:
   greetings: "Good Morning"
   name: "Mark"
-  lastname: "Mario"
+  lastname: "Mario1"
 
 jobs:
   build: 
@@ -40,7 +40,7 @@ jobs:
    
   test:
       runs-on: ubuntu-latest
-      continue-on-error: true
+      ##continue-on-error: true
       environment: test
       needs: build
       env:
@@ -50,7 +50,7 @@ jobs:
           run: |
             echo "$greetings ! from $name $lastname . $name created this file"
             echo Application name is ${{ vars.APP_NAME }}
-            ech " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }}"
+            echo " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }}"
             sleep 5
 
   stage:
