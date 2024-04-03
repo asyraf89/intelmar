@@ -32,7 +32,8 @@ jobs:
         env:
             name: Asyraf
       - name: step2 for testing
-        if: github.event_name == 'push'
+        ##if: github.event_name == 'push'
+        if: ${{ RUNNER.OS }} == 'LINUX'  
         run: |
           cat /etc/os-release
           sleep 5
@@ -44,6 +45,7 @@ jobs:
 
       ## Name is not important in a step
       - run: uname -a
+        if: ${{ RUNNER.OS }} =! 'LINUX'
    
   
   ##test_code##
