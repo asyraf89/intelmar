@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
   push:
   pull_request:
+  
 env:
   greetings: "Good Morning"
   name: "Mark"
@@ -99,6 +100,7 @@ jobs:
    runs-on: ubuntu-latest
    needs : deploy
    ##if: ${{ always() }}
+   if: ${{ cancelled() }}
    environment: deploy
    steps:
      - name: Notification email
