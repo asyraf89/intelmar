@@ -100,7 +100,7 @@ jobs:
    runs-on: ubuntu-latest
    needs : deploy
    ##if: ${{ always() }}
-   if: ${{ cancelled() }}
+   ##if: ${{ cancelled() }}
    environment: deploy
    steps:
      - name: Notification email
