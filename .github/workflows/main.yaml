@@ -18,7 +18,7 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     ##continue-on-error: true
-    if: github.event_name == 'pull'
+    ##if: github.event_name == 'push'
     environment: dev
     env:
       greetings: "hello"
