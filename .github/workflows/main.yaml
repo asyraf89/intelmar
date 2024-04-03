@@ -65,14 +65,15 @@ jobs:
           ##continue-on-error: true
           run: |
             echo "$greetings ! from $name $lastname . $name created this file"
-            eco Application name is ${{ vars.APP_NAME }}
+            echo Application name is ${{ vars.APP_NAME }}
             echo " ${{ vars.APP_NAME }} is hosted on ${{ vars.SERVER_NAME }}"
             sleep 5
         - name: step2
+          id: step2
           run: |
-            echo "$greetings ! from $name $lastname . $name created this file"
+            eco "$greetings ! from $name $lastname . $name created this file"
         - name: debug step
-          if: ${{ failure() }}
+          if: ${{ failure() && steps.step2.conclusion == 'failure' }}
           run: |
             echo Debungging steps
 
