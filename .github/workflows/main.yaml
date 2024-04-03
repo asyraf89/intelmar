@@ -33,11 +33,12 @@ jobs:
             name: Asyraf
       - name: step2 for testing
         ##if: github.event_name == 'push'
-        if: ${{ RUNNER.OS }} == 'LINUX'  
+        if: runner.os == 'Linux'  
         run: |
           cat /etc/os-release
           sleep 5
       - name: step3 for error testing
+        if: runner.os != 'Windows'  
         run: |  
           hostname
           echo "$greetings ! from $name"
@@ -45,7 +46,6 @@ jobs:
 
       ## Name is not important in a step
       - run: uname -a
-        if: ${{ RUNNER.OS }} =! 'LINUX'
    
   
   ##test_code##
