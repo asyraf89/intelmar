@@ -1,0 +1,22 @@
+#CICD Workflow
+
+name: CICD
+on: 
+  workflow_dispatch:
+  push:
+    branches: main
+  pull_request:
+  
+jobs:
+  ##build_code##
+  build: 
+    runs-on: ubuntu-latest
+    ##continue-on-error: true
+    ##if: github.event_name == 'push'
+    steps: 
+      - name: close the repository
+        ##continue-on-error: true
+        uses: actions/checkout@v4.1.2
+      - name: step2
+        run: ls -l
+      
